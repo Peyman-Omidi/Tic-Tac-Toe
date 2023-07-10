@@ -1,3 +1,15 @@
+let editedPlayer = 0
+
+const players = [
+    {
+        name: '',
+        symbol: 'X'
+    },
+    {
+        name: '',
+        symbol: 'O'
+    }
+]
 const playerConfigOverlayElement = document.getElementById('config-overlay');
 const backDropElement = document.getElementById('backdrop')
 
@@ -7,6 +19,9 @@ const cancelConfigBtnElement = document.getElementById('cancel-config-btn');
 const formElement = document.querySelector('form');
 const errorOutputElement = document.getElementById('config-errors')
 
+const startNewGameBtnElement = document.getElementById('srart-game-btn')
+const gameAreaElement = document.getElementById('active-game')
+
 editPlayer1BtnElement.addEventListener('click', openPlayerConfig);
 editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
 
@@ -14,3 +29,4 @@ cancelConfigBtnElement.addEventListener('click', closePlayerConfig);
 backDropElement.addEventListener('click', closePlayerConfig);
 
 formElement.addEventListener('submit', savePlayerConfig)
+startNewGameBtnElement.addEventListener('click', startNewGame)
