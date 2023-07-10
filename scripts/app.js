@@ -1,4 +1,5 @@
 let editedPlayer = 0
+let activePlayer = 0
 
 const players = [
     {
@@ -22,11 +23,22 @@ const errorOutputElement = document.getElementById('config-errors')
 const startNewGameBtnElement = document.getElementById('srart-game-btn')
 const gameAreaElement = document.getElementById('active-game')
 
+const activePlayerNameElement = document.getElementById('active-player-name')
+
+// const gameFieldElements = document.querySelectorAll('#game-board li')
+const gameBoardElement = document.getElementById('game-board')
+
 editPlayer1BtnElement.addEventListener('click', openPlayerConfig);
 editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
 
 cancelConfigBtnElement.addEventListener('click', closePlayerConfig);
 backDropElement.addEventListener('click', closePlayerConfig);
 
-formElement.addEventListener('submit', savePlayerConfig)
-startNewGameBtnElement.addEventListener('click', startNewGame)
+formElement.addEventListener('submit', savePlayerConfig);
+startNewGameBtnElement.addEventListener('click', startNewGame);
+
+// for (const gameFieldElement of gameFieldElements){
+
+//     gameFieldElement.addEventListener('click',selectGameField )
+// }
+gameBoardElement.addEventListener('click', selectGameField)
