@@ -1,5 +1,12 @@
-let editedPlayer = 0
-let activePlayer = 0
+const gameData = [
+[0, 0, 0],
+[0, 0, 0],
+[0, 0, 0],
+];
+let editedPlayer = 0;
+let activePlayer = 0;
+let currentRound = 1;
+let gameIsOver = false
 
 const players = [
     {
@@ -24,9 +31,12 @@ const startNewGameBtnElement = document.getElementById('srart-game-btn')
 const gameAreaElement = document.getElementById('active-game')
 
 const activePlayerNameElement = document.getElementById('active-player-name')
+const gameOverElement = document.getElementById('game-over')
+// const winnerName = document.getElementById('winner-name')
 
 // const gameFieldElements = document.querySelectorAll('#game-board li')
 const gameBoardElement = document.getElementById('game-board')
+
 
 editPlayer1BtnElement.addEventListener('click', openPlayerConfig);
 editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
